@@ -279,7 +279,10 @@ if is_available "telescope.nvim" then
   maps.n["<leader>fb"] = { function() require("telescope.builtin").buffers() end, desc = "Find buffers" }
   maps.n["<leader>fc"] = { function() require("telescope.builtin").grep_string() end, desc = "Find word under cursor" }
   maps.n["<leader>fC"] = { function() require("telescope.builtin").commands() end, desc = "Find commands" }
-  maps.n["<leader>ff"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" }
+  maps.n["<leader><leader>"] =
+    { function() require("telescope.builtin").find_files { hidden = true } end, desc = "Find files" }
+  maps.n["<leader>ff"] =
+    { function() require("telescope.builtin").find_files { hidden = true } end, desc = "Find files" }
   maps.n["<leader>fF"] = {
     function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
     desc = "Find all files",
